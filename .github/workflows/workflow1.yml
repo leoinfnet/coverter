@@ -11,7 +11,7 @@ jobs:
         uses: actions/setup-python@v6
         with:
           python-version: "3.11"
-      - name: Cache Do PIP
+      - name: Cache do pip
         uses: actions/cache@v4
         with:
           path: ~/.cache/pip
@@ -29,15 +29,21 @@ jobs:
           
 
       - name: Rodar Testes
+        id: run_pytest
         continue-on-error: true
         env:
           PYTHONPATH: .
         run: pytest -q --junit-xml=pytest-report.xml
 
       - name: Upload do Relatorio
+        if: ${{steps.run_pytest.outcome == 'failure'}}
         uses: actions/upload-artifact@v4
         with:
           name: 'pytest-report'
           path: pytest-report.xml
       - name: Marcar Job Como Falha
+        if: ${{steps.run_pytest.outcome == 'failure'}}
         run: exit 1
+
+
+
