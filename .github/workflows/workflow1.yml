@@ -62,3 +62,8 @@ jobs:
             coverage.xml
           retention-days: 7
 
+      - name: Commit Dos Badges
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: 'chore:ci: Atualiza a badge de cobertura'
+          file_pattern: coverage.svg
