@@ -4,6 +4,9 @@ jobs:
   meu-job:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout do Código
+        uses: actions/checkout@v4
+
       - name: Configurar Python
         uses: actions/setup-python@v6
         with:
