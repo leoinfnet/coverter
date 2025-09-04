@@ -19,3 +19,8 @@ jobs:
         run: |
           ls -la
           ls -la conversor || true
+      - name: Rodar Testes
+        env:
+          PYTHONPATH: .
+        run: pytest
+
