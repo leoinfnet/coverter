@@ -44,6 +44,11 @@ jobs:
       - name: Marcar Job Como Falha
         if: ${{steps.run_pytest.outcome == 'failure'}}
         run: exit 1
+      - name: Executar Testes DE Cobertura
+        env:
+          PYTHONPATH: .
+        run: pytest -q --disable-warnings --cov --cov-report=xml:coverage.xml --cov-report=term-missing --cov-fail-under=10
+
 
 
 
