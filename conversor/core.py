@@ -9,6 +9,17 @@ def celsius_para_fahrenheit(c: float) -> float:
 def fahrenheit_para_celsius(f: float) -> float:
     return (f - 32.0) * 5.0 / 9.0
 
+def fahrenheit_para_celsius5(f: float) -> float:
+    return (f - 32.0) * 5.0 / 9.0
+
+def fahrenheit_para_celsius2(f: float) -> float:
+    return (f - 32.0) * 5.0 / 9.0
+
+def fahrenheit_para_celsius3(f: float) -> float:
+    return (f - 32.0) * 5.0 / 9.0
+
+
+
 
 def celsius_para_kelvin(c: float) -> float:
     return c + 273.15
