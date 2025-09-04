@@ -29,5 +29,10 @@ jobs:
       - name: Rodar Testes
         env:
           PYTHONPATH: .
-        run: pytest
+        run: pytest -q --junit-xml=pytest-report.xml
 
+      - name: Upload do Relatorio
+        uses: actions/upload-artifact@v4
+        with:
+          name: 'pytest-report'
+          path: pytest-report.xml

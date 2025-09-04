@@ -1,1 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="pytest" errors="0" failures="0" skipped="0" tests="4" time="0.013" timestamp="2025-09-04T17:31:23.861755-03:00" hostname="MacBook-Pro-de-Leonardo.local"><testcase classname="tests.test_core" name="test_celsius_fahrenheit_ida_volta" time="0.000" /><testcase classname="tests.test_core" name="test_celsius_kelvin_basico" time="0.000" /><testcase classname="tests.test_core" name="test_km_milhas_ida_volta" time="0.000" /><testcase classname="tests.test_core" name="test_kg_lb_ida_volta" time="0.000" /></testsuite></testsuites>
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="5" time="0.024" timestamp="2025-09-04T19:53:54.990899-03:00" hostname="MacBook-Pro-de-Leonardo.local"><testcase classname="tests.test_core" name="test_celsius_fahrenheit_ida_volta" time="0.000" /><testcase classname="tests.test_core" name="test_celsius_kelvin_basico" time="0.000" /><testcase classname="tests.test_core" name="test_km_milhas_ida_volta" time="0.000" /><testcase classname="tests.test_core" name="test_kg_lb_ida_volta" time="0.000" /><testcase classname="tests.test_core" name="test_celsius_para_fahrenheit_errado" time="0.000"><failure message="assert 32.0 == 100">def test_celsius_para_fahrenheit_errado():
+        """Teste propositalmente errado: 0 °C NÃO é 100 °F."""
+        valor = core.celsius_para_fahrenheit(0)
+&gt;       assert valor == 100  # deveria ser 32, mas estamos forçando a falha
+E       assert 32.0 == 100
+
+tests/test_core.py:42: AssertionError</failure></testcase></testsuite></testsuites>
