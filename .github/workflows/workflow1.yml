@@ -1,5 +1,8 @@
 name: Hello World
-on: [push]
+on:
+  push:
+    branches:
+      - main
 jobs:
   meu-job:
     runs-on: ubuntu-latest
@@ -26,7 +29,6 @@ jobs:
         run: |
           ls -la
           ls -la conversor || true
-          
 
       - name: Rodar Testes
         id: run_pytest
@@ -47,7 +49,7 @@ jobs:
       - name: Executar Testes DE Cobertura
         env:
           PYTHONPATH: .
-        run: pytest -q --disable-warnings --cov --cov-report=xml:coverage.xml --cov-report=term-missing --cov-fail-under=10
+        run: pytest -q --disable-warnings --cov --cov-report=xml:coverage.xml --cov-report=term-missing --cov-fail-under=60
 
       - name:  Gerando Badge
         run: | 

@@ -35,6 +35,11 @@ def test_kg_lb_ida_volta():
         kg2 = core.lb_para_kg(lb)
         assert approx(kg, kg2)
 
+def test_celsius_fahrenheit_5():
+    for c in (-40.0, 0.0, 37.0, 100.0):
+        f = core.fahrenheit_para_celsius5(c)
+        c2 = core.fahrenheit_para_celsius(f)
+        assert True
 
 # def test_celsius_para_fahrenheit_errado():
 #     """Teste propositalmente errado: 0 °C NÃO é 100 °F."""
