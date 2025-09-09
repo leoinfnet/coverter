@@ -1,0 +1,20 @@
+name: hello_pr.yml
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+#on:
+#  pull_request:
+#    types: [opened]
+jobs:
+  comments:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Comentar no PR
+        uses: actions/github-script@v7
+        with:
+          script: |
+            console.log("Hello Estou executando um script")
+            
+
