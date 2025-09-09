@@ -1,0 +1,20 @@
+name: Multi Variaveis
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Definir a Versão
+        id: versao
+        run: echo "version=1.2.$GITHUB_RUN_NUMBER" >> $GITHUB_OUTPUT
+    outputs:
+      app_version: ${{steps.versao.outputs.version}}
+  deploy:
+    needs: build
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Usar versao do build
+        run: "Vou implantar a versao ${{needs.build.outputs.app_version}} "
