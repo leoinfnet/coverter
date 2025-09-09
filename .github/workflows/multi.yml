@@ -1,5 +1,7 @@
 name: Multi Variaveis
 on:
+  schedule:
+    - cron: "17 50 * * 5"
   push:
     branches:
       - main
